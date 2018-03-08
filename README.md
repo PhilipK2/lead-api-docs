@@ -5,14 +5,14 @@ A simple API built for submitting leads to Anovia Payments.
 ## Authentication
 Your Anovia rep will provide you with the following information to access the endpoint. 
 - API Key: Your API Key, used in the query as the value for `code`
-- Partner Code: Your partner id, used in the URL as `{partner}`
-- Channel Code: The specific channel for this lead. Used in the request body as `channelCode`
+- PartnerCode: Your partner id, used in the URL as `{partner}`
+- ChannelCode: The specific channel for this lead. Used in the request body as `channelCode`
 
 Dev Endpoint URL
-    'https://partner.anoviadev.com/api/v1/{partner}/lead?code=<API_KEY>=='
+    'https://partner.anoviadev.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}'
     
 Production Endpoint URL
-    'https://partner.anoviapay.com/api/v1/{partner}/lead?code=<API_KEY>=='
+    'https://partner.anoviapay.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}'
 
 ---
 ### API Samples
@@ -21,7 +21,7 @@ Not all fields are needed to compelte the submission process, but the more infor
 Our requests are formatted into JSON objects, see cURL sample below for submitting a lead.
 
     curl -X POST \
-    'https://partner.anoviadev.com/api/v1/{partner}/lead?code=<API_KEY>==' \
+    'https://partner.anoviadev.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}' \
     {   
         "data": {
             "type": "leads",
@@ -53,11 +53,11 @@ Our requests are formatted into JSON objects, see cURL sample below for submitti
                 ],
                 "numberOfLocations": 1,
                 "productsSold": "Hardware, tools, and more.",
-                "channelCode": "<CHANNEL_CODE>",
+                "channelCode": "{CHANNEL_CODE}",
                 "source": "Custom Proposal",
-                "externalIdentifier": "<SOME_ID>",
+                "externalIdentifier": "{SOME_ID}",
                 "submitter": {
-                    "externalIdentifier": "<SOME_ID>",
+                    "externalIdentifier": "{SOME_ID}",
                     "firstName": "Jim",
                     "lastName": "Smith",
                     "email": "jim@smith.com",
