@@ -4,21 +4,22 @@ A simple API built for submitting leads to Anovia Payments.
 ---
 ## Authentication
 Your Anovia rep will provide you with the following information to access the endpoint. 
-- API Key: Your API Key, used in the query as the value for `code`
-- PartnerCode: Your partner id, used in the URL as `{partner}`
-- ChannelCode: The specific channel for this lead. Used in the request body as `channelCode`
+- `API_KEY`: Your unique API Key. Pass this in the query string as the value of `code`
+- `PARTNER_CODE`: Your partner id. This is a part of your unique URL.
+- `CHANNEL_CODE`: The sales channel. Most partners only have one channel, but this field allows partners to submit leads via different sales channels to the same URL. Used in the request body as `channelCode`
 
 Dev Endpoint URL
-    'https://partner.anoviadev.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}'
+`https://partner.anoviadev.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}`
     
 Production Endpoint URL
-    'https://partner.anoviapay.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}'
+`https://partner.anoviapay.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}`
 
 ---
 ### API Samples
 To send a lead to us, you will need to gather all of the required information listed in the schema below. Once you have all of this, you will need to make a Post request to get all of this information to our endpoint.
-Not all fields are needed to compelte the submission process, but the more information we have the better. Refer to the schema for what fields are required for a valid submission. You will notice that some fields have multiple value options. Please ensure that these feilds are completed with one of the options provided in the schema. Anything other than what is listed, will result in a bad request.
-Our requests are formatted into JSON objects, see cURL sample below for submitting a lead.
+Not all fields are needed to compelte the submission process, but the more information we have the better. Refer to the schema for what fields are required for a valid submission. You will notice that some fields have multiple value options. Please ensure that these fields are completed with one of the options provided in the schema. Anything other than what is listed, will result in a 400 Error Response.
+
+This endpoint uses [JSONAPI](http://jsonapi.org/) serialization. Sample cURL Request:
 
     curl -X POST \
     'https://partner.anoviadev.com/api/v1/{PARTNER_CODE}/lead?code={API_KEY}' \
@@ -76,7 +77,9 @@ Any syntactical errors will show:
     status: 400
     body: {
         "message": "Invalid Request",
-        "errors": null
+        "errors": [{
+            "message": "Request is not in JSONAPI format"
+        }]
     }
     
 Validation errors will show direct path to issue
