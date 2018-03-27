@@ -114,7 +114,7 @@ contact.phoneExtension                  |string(8)           |False       |The d
 contact.altPhone                        |string(12)          |False       |The decision maker's alternate phone number
 contact.altPhoneExtension               |string(8)           |False       |The decision maker's alternate phone number extension
 contact.bestTimeToContact               |string(140)         |False       |The best time and/or day to contact the decision maker. <br>Values: <br>8am - 10am<br>10am - 12pm<br>12pm - 2pm<br>2pm - 4pm<br>4pm - 6pm
-contact.timeZone                        |string(140)         |False       |The time zone of the business you are referring. <br>Values: <br>PT - Pacific<br>MT - Mountain<br>CT - Central<br>ET - Eastern
+contact.timeZone                        |string(140)         |False       |The time zone of the business you are referring. <br>Values: <br>PT<br>MT<br>CT<br>ET
 businessAddress.address1                |string(140)         |False       |Address of the business you are referring
 businessAddress.address2                |string(140)         |False       |Additional address info of the business you are referring
 businessAddress.city                    |string(140)         |False       |City of the business you are referring
