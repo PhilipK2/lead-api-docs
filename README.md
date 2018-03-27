@@ -128,8 +128,8 @@ numberOfLocations                       |number              |False       |Numbe
 productsSold                            |string(140)         |False       |Products or services sold by the business you are referring
 channelCode                             |string(140)         |True        |A Channel code will be provided to you by your Anovia liaison
 source                                  |string(140)         |False       |Weather or not your merchant would like a custom proposal from us, or if they have already viewed one of our prebuilt programs and are ready to sign up. Values are case sensitive <br>Values: <br>Program<br>Custom Proposal 
-externalIdentifier                      |string(36)          |False       |Your organizations unique identifier for your specific leads submitted to Anovia. You can assign your own identifier for your leads, or we will assign one for you on our end.
-submitter.externalIdentifier            |string(36)          |False       |Your organizations unique identifier for your agent/employee
+externalIdentifier                      |string(36)          |False       |Your organizations unique identifier for your specific leads submitted to Anovia. You can assign your own identifier for your leads, or we will assign one for you on our end. Make sure to leave this field blank if you are not assigning your own identifier.
+submitter.externalIdentifier            |string(36)          |False       |Your organizations unique identifier for your agent/employee. Make sure to leave this field blank if you are not assigning your own identifier.
 submitter.firstName                     |string(140)         |True        |The first name of the agent/employee who submitted the lead
 submitter.lastName                      |string(140)         |True        |The last name of the agent/employee who submitted the lead
 submitter.email                         |string(140)         |True        |The email address of the agent/employee who submitted the lead
